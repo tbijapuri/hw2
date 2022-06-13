@@ -44,6 +44,11 @@ function todoReducer(state, action){
         const currState = state;
         currState[action.index] = updatedTodo;
         return currState;
+
+        case 'DELETE_TODO':
+         return state.filter((todo,index) => index !== action.index)
+       case 'FETCH_POSTS':
+         return action.todos;   
       default:
         return state;
     }
